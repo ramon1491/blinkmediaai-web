@@ -1,258 +1,325 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BlinkMediaAi | Estudio de diseño con inteligencia artificial</title>
-  <meta name="description" content="BlinkMediaAi es un estudio de diseño y contenido visual creado con inteligencia artificial: branding, campañas, vídeo y redes sociales." />
-  <meta name="theme-color" content="#07070a" />
-  <meta property="og:title" content="BlinkMediaAi" />
-  <meta property="og:description" content="Diseño y contenido visual con inteligencia artificial, en un parpadeo." />
+  <title>BlinkMediaAi | Estudio creativo de diseño con IA</title>
+  <meta name="description" content="BlinkMediaAi es un estudio creativo que une dirección de arte humana e inteligencia artificial: branding, campañas, vídeo y contenido para redes." />
+  <meta name="theme-color" content="#050507" />
+  <meta property="og:title" content="BlinkMediaAi | Estudio creativo de diseño con IA" />
+  <meta property="og:description" content="Creamos lo que tu marca imagina, en un parpadeo." />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://blinkmediaai-web.vercel.app/assets/img/og.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.replace("no-js", "js");</script>
 </head>
 <body>
-  <header class="nav" id="top">
-    <div class="container nav__inner">
+  <!-- Pantalla de carga -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__eye"><span></span></div>
+    <div class="loader__count"><span class="loader__num">0</span>%</div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><span class="cursor__label">Ver</span></div>
+  <img class="hover-preview" alt="" aria-hidden="true" />
+
+  <header class="nav">
+    <div class="wrap nav__inner">
       <a href="#top" class="logo" aria-label="BlinkMediaAi, inicio">
-        <span class="logo__mark" aria-hidden="true"></span>
-        <span>Blink<span class="logo__accent">Media</span>Ai</span>
+        <span class="logo__eye" aria-hidden="true"><span></span></span>
+        <span class="logo__word">BlinkMedia<i>Ai</i></span>
       </a>
-      <button class="nav__toggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú">
-        <span></span><span></span>
-      </button>
-      <nav class="nav__menu" id="menu">
+      <nav class="nav__links" aria-label="Principal">
         <a href="#servicios">Servicios</a>
-        <a href="#portfolio">Portfolio</a>
+        <a href="#trabajos">Trabajos</a>
+        <a href="#estudio">Estudio</a>
         <a href="#proceso">Proceso</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#contacto" class="btn btn--small">Hablemos</a>
       </nav>
+      <a href="#contacto" class="pill magnetic nav__cta"><span>Hablemos</span></a>
+      <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span></span><span></span></button>
     </div>
   </header>
 
-  <main>
-    <!-- HERO -->
+  <div class="menu" id="menu" aria-hidden="true">
+    <nav class="wrap menu__links">
+      <a href="#servicios"><small>01</small>Servicios</a>
+      <a href="#trabajos"><small>02</small>Trabajos</a>
+      <a href="#estudio"><small>03</small>Estudio</a>
+      <a href="#proceso"><small>04</small>Proceso</a>
+      <a href="#contacto"><small>05</small>Contacto</a>
+    </nav>
+  </div>
+
+  <main id="top">
+    <!-- ============ HERO ============ -->
     <section class="hero">
-      <div class="hero__glow" aria-hidden="true"></div>
-      <div class="container hero__inner">
-        <p class="eyebrow"><span class="dot"></span> Estudio creativo impulsado por IA</p>
+      <canvas class="hero__canvas" aria-hidden="true"></canvas>
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="wrap hero__inner">
+        <p class="hero__tag" data-hero-fade><span class="live"></span> Estudio creativo de IA · Disponibles para nuevos proyectos</p>
         <h1 class="hero__title">
-          Diseño que se crea<br />
-          <span class="gradient-text">en un parpadeo.</span>
+          <span class="line"><span>Creamos lo que</span></span>
+          <span class="line"><span>tu marca <em>imagina,</em></span></span>
+          <span class="line"><span>en un parpadeo.</span></span>
         </h1>
-        <p class="hero__lead">
-          En BlinkMediaAi combinamos dirección creativa humana con inteligencia artificial para crear
-          marcas, campañas y contenido visual que destacan. Más rápido, más ideas, sin perder criterio.
-        </p>
-        <div class="hero__actions">
-          <a href="#contacto" class="btn">Empezar un proyecto</a>
-          <a href="#portfolio" class="btn btn--ghost">Ver trabajos</a>
+        <div class="hero__bottom">
+          <p class="hero__lead" data-hero-fade>
+            Unimos dirección creativa humana e inteligencia artificial para crear identidades, campañas y contenido
+            visual imposible de ignorar.
+          </p>
+          <div class="hero__actions" data-hero-fade>
+            <a href="#contacto" class="btn magnetic"><span>Empezar un proyecto</span><i>→</i></a>
+            <a href="#trabajos" class="btn btn--ghost magnetic"><span>Ver trabajos</span></a>
+          </div>
         </div>
-        <ul class="hero__stats">
-          <li><strong>10x</strong><span>más conceptos por briefing</span></li>
-          <li><strong>72 h</strong><span>primera propuesta visual</span></li>
-          <li><strong>100%</strong><span>supervisado por diseñadores</span></li>
+      </div>
+      <a href="#manifiesto" class="badge" aria-label="Bajar" data-hero-fade>
+        <svg viewBox="0 0 120 120" aria-hidden="true">
+          <defs><path id="circ" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0" /></defs>
+          <text><textPath href="#circ">BLINKMEDIAAI · DISEÑO CON IA · BLINKMEDIAAI · DISEÑO CON IA ·</textPath></text>
+        </svg>
+        <span class="badge__arrow">↓</span>
+      </a>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker__track">
+        <span>Branding</span><b>✦</b><span><em>Vídeo IA</em></span><b>✦</b><span>Contenido para redes</span><b>✦</b><span><em>Fotografía de producto</em></span><b>✦</b><span>Campañas</span><b>✦</b><span><em>Diseño web</em></span><b>✦</b>
+        <span>Branding</span><b>✦</b><span><em>Vídeo IA</em></span><b>✦</b><span>Contenido para redes</span><b>✦</b><span><em>Fotografía de producto</em></span><b>✦</b><span>Campañas</span><b>✦</b><span><em>Diseño web</em></span><b>✦</b>
+      </div>
+    </div>
+
+    <!-- ============ MANIFIESTO ============ -->
+    <section class="manifesto" id="manifiesto">
+      <div class="wrap">
+        <p class="label" data-reveal>(00) Manifiesto</p>
+        <p class="manifesto__text" data-words>
+          La inteligencia artificial es nuestro acelerador, no nuestro atajo. Generamos cientos de caminos en horas,
+          y nuestro equipo elige, pule y firma cada pieza. El resultado son marcas con una estética propia,
+          producidas a la velocidad que exige hoy.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SERVICIOS ============ -->
+    <section class="services" id="servicios">
+      <div class="wrap">
+        <div class="head">
+          <p class="label" data-reveal>(01) Servicios</p>
+          <h2 class="title" data-reveal>Todo lo visual de tu marca, <em>potenciado</em> con IA.</h2>
+        </div>
+        <ul class="srv">
+          <li class="srv__row" data-preview="assets/img/work-1.jpg" data-reveal>
+            <span class="srv__n">01</span>
+            <h3 class="srv__t">Branding e identidad</h3>
+            <div class="srv__d"><p>Logotipos, sistemas visuales y guías de marca. Exploramos cientos de rutas y refinamos a mano la ganadora.</p><p class="tags"><span>Logo</span><span>Sistema visual</span><span>Brandbook</span></p></div>
+            <span class="srv__a">↗</span>
+          </li>
+          <li class="srv__row" data-preview="assets/img/ig-1.jpg" data-reveal>
+            <span class="srv__n">02</span>
+            <h3 class="srv__t">Contenido para redes</h3>
+            <div class="srv__d"><p>Posts, carruseles y reels con una estética reconocible y producción constante cada mes.</p><p class="tags"><span>Instagram</span><span>TikTok</span><span>Reels</span></p></div>
+            <span class="srv__a">↗</span>
+          </li>
+          <li class="srv__row" data-preview="assets/img/work-3.jpg" data-reveal>
+            <span class="srv__n">03</span>
+            <h3 class="srv__t">Vídeo y motion IA</h3>
+            <div class="srv__d"><p>Spots, animaciones y vídeo generativo para lanzamientos y anuncios, sin rodajes costosos.</p><p class="tags"><span>Spots</span><span>Motion</span><span>Vídeo generativo</span></p></div>
+            <span class="srv__a">↗</span>
+          </li>
+          <li class="srv__row" data-preview="assets/img/ig-6.jpg" data-reveal>
+            <span class="srv__n">04</span>
+            <h3 class="srv__t">Fotografía de producto</h3>
+            <div class="srv__d"><p>Packshots y escenas lifestyle generadas con IA, en cualquier escenario y listas para vender.</p><p class="tags"><span>Ecommerce</span><span>Packshot</span><span>Lifestyle</span></p></div>
+            <span class="srv__a">↗</span>
+          </li>
+          <li class="srv__row" data-preview="assets/img/work-2.jpg" data-reveal>
+            <span class="srv__n">05</span>
+            <h3 class="srv__t">Campañas publicitarias</h3>
+            <div class="srv__d"><p>Conceptos, key visuals y variantes para cada formato, listas para testear qué funciona.</p><p class="tags"><span>Concepto</span><span>Key visual</span><span>Ads</span></p></div>
+            <span class="srv__a">↗</span>
+          </li>
+          <li class="srv__row" data-preview="assets/img/work-6.jpg" data-reveal>
+            <span class="srv__n">06</span>
+            <h3 class="srv__t">Diseño web</h3>
+            <div class="srv__d"><p>Landings y webs con visuales únicos y animación cuidada, que convierten visitas en clientes.</p><p class="tags"><span>Landing</span><span>Web</span><span>UI</span></p></div>
+            <span class="srv__a">↗</span>
+          </li>
         </ul>
       </div>
-      <div class="marquee" aria-hidden="true">
-        <div class="marquee__track">
-          <span>Branding</span><span>✦</span><span>Contenido para redes</span><span>✦</span><span>Vídeo IA</span><span>✦</span><span>Fotografía de producto</span><span>✦</span><span>Campañas</span><span>✦</span><span>Diseño web</span><span>✦</span>
-          <span>Branding</span><span>✦</span><span>Contenido para redes</span><span>✦</span><span>Vídeo IA</span><span>✦</span><span>Fotografía de producto</span><span>✦</span><span>Campañas</span><span>✦</span><span>Diseño web</span><span>✦</span>
-        </div>
-      </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section class="section" id="servicios">
-      <div class="container">
-        <div class="section__head">
-          <p class="eyebrow">Servicios</p>
-          <h2>Todo lo visual de tu marca, potenciado con IA.</h2>
+    <!-- ============ TRABAJOS (scroll horizontal) ============ -->
+    <!-- PENDIENTE: sustituir las imágenes de assets/img/work-*.jpg por proyectos reales y cambiar nombres -->
+    <section class="work" id="trabajos">
+      <div class="work__pin">
+        <div class="wrap work__head">
+          <p class="label">(02) Trabajos</p>
+          <h2 class="title">Trabajos <em>seleccionados</em></h2>
+          <p class="work__hint">Desliza <span>→</span></p>
         </div>
-        <div class="grid grid--3">
-          <article class="card">
-            <div class="card__icon">01</div>
-            <h3>Branding e identidad</h3>
-            <p>Logotipos, paletas, tipografías y sistemas visuales completos. Exploramos cientos de rutas con IA y refinamos a mano la mejor.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">02</div>
-            <h3>Contenido para redes</h3>
-            <p>Posts, carruseles y reels para Instagram y TikTok con una estética coherente y producción constante cada mes.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">03</div>
-            <h3>Vídeo y animación IA</h3>
-            <p>Spots, motion graphics y vídeos generativos para anuncios y lanzamientos, sin rodajes costosos.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">04</div>
-            <h3>Fotografía de producto</h3>
-            <p>Imágenes de producto y lifestyle generadas con IA, en cualquier escenario, listas para tu tienda o tus anuncios.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">05</div>
-            <h3>Campañas publicitarias</h3>
-            <p>Conceptos creativos y piezas adaptadas a cada formato y plataforma, con variantes para testear qué funciona.</p>
-          </article>
-          <article class="card">
-            <div class="card__icon">06</div>
-            <h3>Diseño web</h3>
-            <p>Landings y webs modernas con visuales únicos que convierten visitas en clientes.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- PORTFOLIO -->
-    <section class="section section--alt" id="portfolio">
-      <div class="container">
-        <div class="section__head section__head--row">
-          <div>
-            <p class="eyebrow">Portfolio</p>
-            <h2>Trabajos seleccionados.</h2>
-          </div>
-          <p class="muted">Una muestra de proyectos recientes. Pronto añadiremos más.</p>
-        </div>
-        <!-- PENDIENTE: sustituir cada .work__media por una imagen real: <img src="assets/portfolio/proyecto-1.jpg" alt="..."> -->
-        <div class="works">
-          <a class="work work--lg" href="#contacto">
-            <div class="work__media work__media--1"><span>Imagen del proyecto</span></div>
-            <div class="work__info"><h3>Proyecto 01</h3><p>Branding · Cliente por confirmar</p></div>
+        <div class="work__track">
+          <a class="card" href="#contacto" data-cursor="Ver">
+            <div class="card__img"><img src="assets/img/work-1.jpg" alt="Visual abstracto de una esfera de cristal con tonos violeta y cian" loading="lazy" /></div>
+            <div class="card__meta"><span>01</span><h3>Nébula</h3><p>Identidad visual</p></div>
           </a>
-          <a class="work" href="#contacto">
-            <div class="work__media work__media--2"><span>Imagen del proyecto</span></div>
-            <div class="work__info"><h3>Proyecto 02</h3><p>Contenido para redes</p></div>
+          <a class="card" href="#contacto" data-cursor="Ver">
+            <div class="card__img"><img src="assets/img/work-2.jpg" alt="Anillo de luz naranja sobre fondo magenta" loading="lazy" /></div>
+            <div class="card__meta"><span>02</span><h3>Solar</h3><p>Campaña de producto</p></div>
           </a>
-          <a class="work" href="#contacto">
-            <div class="work__media work__media--3"><span>Imagen del proyecto</span></div>
-            <div class="work__info"><h3>Proyecto 03</h3><p>Vídeo IA</p></div>
+          <a class="card" href="#contacto" data-cursor="Ver">
+            <div class="card__img"><img src="assets/img/work-3.jpg" alt="Ondas líquidas en azul glaciar" loading="lazy" /></div>
+            <div class="card__meta"><span>03</span><h3>Glaciar</h3><p>Vídeo IA</p></div>
           </a>
-          <a class="work work--lg" href="#contacto">
-            <div class="work__media work__media--4"><span>Imagen del proyecto</span></div>
-            <div class="work__info"><h3>Proyecto 04</h3><p>Fotografía de producto</p></div>
+          <a class="card" href="#contacto" data-cursor="Ver">
+            <div class="card__img"><img src="assets/img/work-4.jpg" alt="Anillo verde neón sobre texturas ácidas" loading="lazy" /></div>
+            <div class="card__meta"><span>04</span><h3>Ácido</h3><p>Contenido para redes</p></div>
           </a>
-          <a class="work work--lg" href="#contacto">
-            <div class="work__media work__media--5"><span>Imagen del proyecto</span></div>
-            <div class="work__info"><h3>Proyecto 05</h3><p>Campaña publicitaria</p></div>
+          <a class="card" href="#contacto" data-cursor="Ver">
+            <div class="card__img"><img src="assets/img/work-5.jpg" alt="Esfera violeta con reflejos rosas" loading="lazy" /></div>
+            <div class="card__meta"><span>05</span><h3>Pulso</h3><p>Dirección de arte</p></div>
           </a>
-          <a class="work" href="#contacto">
-            <div class="work__media work__media--6"><span>Imagen del proyecto</span></div>
-            <div class="work__info"><h3>Proyecto 06</h3><p>Diseño web</p></div>
+          <a class="card" href="#contacto" data-cursor="Ver">
+            <div class="card__img"><img src="assets/img/work-6.jpg" alt="Esfera esmeralda sobre fondo verde profundo" loading="lazy" /></div>
+            <div class="card__meta"><span>06</span><h3>Aurora</h3><p>Diseño web</p></div>
+          </a>
+          <a class="card card--cta" href="#contacto" data-cursor="Hablemos">
+            <p>¿El próximo<br /><em>es el tuyo?</em></p>
+            <span class="btn"><span>Empezar un proyecto</span><i>→</i></span>
           </a>
         </div>
       </div>
     </section>
 
-    <!-- PROCESO -->
-    <section class="section" id="proceso">
-      <div class="container">
-        <div class="section__head">
-          <p class="eyebrow">Proceso</p>
-          <h2>De la idea al resultado, sin esperas.</h2>
+    <!-- ============ ESTUDIO ============ -->
+    <section class="studio" id="estudio">
+      <div class="wrap">
+        <div class="head">
+          <p class="label" data-reveal>(03) Estudio</p>
+          <!-- PENDIENTE: historia real del estudio -->
+          <h2 class="title" data-reveal>Creativos humanos.<br /><em>Herramientas del futuro.</em></h2>
+        </div>
+        <div class="studio__grid">
+          <p class="studio__intro" data-reveal>
+            BlinkMediaAi nace para que cualquier marca, de una startup a una empresa consolidada, tenga un contenido visual
+            de primer nivel sin los tiempos ni los costes de una agencia tradicional.
+          </p>
+          <!-- PENDIENTE: confirmar que estas cifras son reales -->
+          <ul class="stats">
+            <li data-reveal><strong><span data-count="10">10</span>x</strong><span>más conceptos por briefing</span></li>
+            <li data-reveal><strong><span data-count="72">72</span>h</strong><span>para tu primera propuesta visual</span></li>
+            <li data-reveal><strong><span data-count="100">100</span>%</strong><span>revisado por diseñadores</span></li>
+            <li data-reveal><strong><span data-count="24">24</span>h</strong><span>para responder a tu mensaje</span></li>
+          </ul>
+        </div>
+        <ul class="values">
+          <li data-reveal><h3>Velocidad</h3><p>Propuestas en días, no en semanas.</p></li>
+          <li data-reveal><h3>Criterio</h3><p>La IA propone, el equipo decide.</p></li>
+          <li data-reveal><h3>Coherencia</h3><p>Una estética reconocible en cada pieza.</p></li>
+          <li data-reveal><h3>Transparencia</h3><p>Precios claros y uso responsable de la IA.</p></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PROCESO ============ -->
+    <section class="process" id="proceso">
+      <div class="wrap process__grid">
+        <div class="process__side">
+          <p class="label">(04) Proceso</p>
+          <h2 class="title">De la idea al resultado, <em>sin esperas.</em></h2>
         </div>
         <ol class="steps">
-          <li class="step"><span class="step__n">01</span><h3>Briefing</h3><p>Entendemos tu marca, tu público y tus objetivos en una llamada corta.</p></li>
-          <li class="step"><span class="step__n">02</span><h3>Exploración IA</h3><p>Generamos decenas de direcciones visuales en horas, no semanas.</p></li>
-          <li class="step"><span class="step__n">03</span><h3>Dirección creativa</h3><p>Nuestro equipo elige, ajusta y pule cada pieza a mano.</p></li>
-          <li class="step"><span class="step__n">04</span><h3>Entrega</h3><p>Recibes los archivos finales en todos los formatos que necesitas.</p></li>
+          <li class="step" data-reveal><span class="step__n">01</span><div><h3>Briefing</h3><p>Una llamada corta para entender tu marca, tu público y tus objetivos.</p></div></li>
+          <li class="step" data-reveal><span class="step__n">02</span><div><h3>Exploración con IA</h3><p>Generamos decenas de direcciones visuales en horas y te enseñamos las mejores.</p></div></li>
+          <li class="step" data-reveal><span class="step__n">03</span><div><h3>Dirección creativa</h3><p>Nuestro equipo elige, ajusta y pule cada pieza a mano hasta que es perfecta.</p></div></li>
+          <li class="step" data-reveal><span class="step__n">04</span><div><h3>Entrega</h3><p>Recibes los archivos finales en todos los formatos y tamaños que necesitas.</p></div></li>
         </ol>
       </div>
     </section>
 
-    <!-- NOSOTROS -->
-    <section class="section section--alt" id="nosotros">
-      <div class="container about">
-        <div class="about__text">
-          <p class="eyebrow">Nosotros</p>
-          <h2>Creativos humanos.<br />Herramientas del futuro.</h2>
-          <!-- PENDIENTE: reemplazar con la historia real del estudio -->
-          <p>
-            BlinkMediaAi nace para ayudar a marcas y negocios a tener un contenido visual de primer nivel sin los
-            tiempos ni los costes de una agencia tradicional. Usamos la inteligencia artificial como acelerador
-            creativo, pero cada entrega pasa por el ojo de un diseñador.
-          </p>
-          <p>
-            Trabajamos con startups, marcas personales, ecommerce y empresas que quieren comunicar de forma
-            moderna y constante.
-          </p>
+    <!-- ============ INSTAGRAM ============ -->
+    <!-- PENDIENTE: confirmar usuario de Instagram y cambiar las imágenes por posts reales -->
+    <section class="insta" id="instagram">
+      <div class="wrap">
+        <div class="insta__head">
+          <div>
+            <p class="label" data-reveal>(05) Instagram</p>
+            <h2 class="title" data-reveal>Síguenos en <em>@blinkmediaai</em></h2>
+          </div>
+          <a class="btn btn--ghost magnetic" href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener" data-reveal><span>Ver perfil</span><i>↗</i></a>
         </div>
-        <ul class="about__values">
-          <li><h3>Velocidad</h3><p>Propuestas en días, no en semanas.</p></li>
-          <li><h3>Criterio</h3><p>La IA propone, el equipo decide.</p></li>
-          <li><h3>Coherencia</h3><p>Una estética reconocible en cada pieza.</p></li>
-          <li><h3>Transparencia</h3><p>Precios claros y uso responsable de la IA.</p></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- INSTAGRAM -->
-    <section class="section" id="instagram">
-      <div class="container">
-        <div class="insta">
-          <div class="insta__text">
-            <p class="eyebrow">Instagram</p>
-            <h2>Síguenos en <span class="gradient-text">@blinkmediaai</span></h2>
-            <p class="muted">Procesos, experimentos y nuestros últimos trabajos, cada semana.</p>
-            <!-- PENDIENTE: confirmar el usuario real de Instagram -->
-            <a class="btn" href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener">Ver perfil en Instagram</a>
-          </div>
-          <div class="insta__grid" aria-hidden="true">
-            <span></span><span></span><span></span><span></span><span></span><span></span>
-          </div>
+        <div class="insta__grid">
+          <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener" data-cursor="Abrir" data-reveal><img src="assets/img/ig-1.jpg" alt="Publicación de Instagram de BlinkMediaAi" loading="lazy" /></a>
+          <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener" data-cursor="Abrir" data-reveal><img src="assets/img/ig-2.jpg" alt="Publicación de Instagram de BlinkMediaAi" loading="lazy" /></a>
+          <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener" data-cursor="Abrir" data-reveal><img src="assets/img/ig-3.jpg" alt="Publicación de Instagram de BlinkMediaAi" loading="lazy" /></a>
+          <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener" data-cursor="Abrir" data-reveal><img src="assets/img/ig-4.jpg" alt="Publicación de Instagram de BlinkMediaAi" loading="lazy" /></a>
+          <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener" data-cursor="Abrir" data-reveal><img src="assets/img/ig-5.jpg" alt="Publicación de Instagram de BlinkMediaAi" loading="lazy" /></a>
+          <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener" data-cursor="Abrir" data-reveal><img src="assets/img/ig-6.jpg" alt="Publicación de Instagram de BlinkMediaAi" loading="lazy" /></a>
         </div>
       </div>
     </section>
 
-    <!-- CONTACTO -->
-    <section class="section section--alt" id="contacto">
-      <div class="container contact">
-        <div class="contact__text">
-          <p class="eyebrow">Contacto</p>
-          <h2>¿Tienes un proyecto en mente?</h2>
-          <p class="muted">Cuéntanos qué necesitas y te respondemos en menos de 24 horas.</p>
+    <!-- ============ CONTACTO ============ -->
+    <section class="contact" id="contacto">
+      <div class="contact__glow" aria-hidden="true"></div>
+      <div class="wrap">
+        <p class="label" data-reveal>(06) Contacto</p>
+        <h2 class="contact__title" data-reveal>¿Tienes una idea?<br /><em>Hagámosla brillar.</em></h2>
+        <div class="contact__grid">
           <!-- PENDIENTE: email y WhatsApp reales -->
-          <ul class="contact__list">
+          <ul class="contact__list" data-reveal>
             <li><span>Email</span><a href="mailto:hola@blinkmediaai.com">hola@blinkmediaai.com</a></li>
             <li><span>WhatsApp</span><a href="https://wa.me/000000000" target="_blank" rel="noopener">+00 000 000 000</a></li>
             <li><span>Instagram</span><a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener">@blinkmediaai</a></li>
           </ul>
+          <!-- El formulario abre el correo del visitante. Para recibirlo directo, conectar Formspree (ver README). -->
+          <form class="form" action="mailto:hola@blinkmediaai.com" method="post" enctype="text/plain" data-reveal>
+            <div class="form__row">
+              <label><span>Nombre</span><input name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre" /></label>
+              <label><span>Email</span><input name="email" type="email" required autocomplete="email" placeholder="tu@email.com" /></label>
+            </div>
+            <fieldset class="chips">
+              <legend>¿Qué necesitas?</legend>
+              <label><input type="checkbox" name="servicio" value="Branding" /><span>Branding</span></label>
+              <label><input type="checkbox" name="servicio" value="Redes" /><span>Redes</span></label>
+              <label><input type="checkbox" name="servicio" value="Vídeo IA" /><span>Vídeo IA</span></label>
+              <label><input type="checkbox" name="servicio" value="Producto" /><span>Producto</span></label>
+              <label><input type="checkbox" name="servicio" value="Campaña" /><span>Campaña</span></label>
+              <label><input type="checkbox" name="servicio" value="Web" /><span>Web</span></label>
+            </fieldset>
+            <label><span>Cuéntanos tu proyecto</span><textarea name="mensaje" rows="3" required placeholder="Qué quieres crear, para cuándo, referencias…"></textarea></label>
+            <button class="btn magnetic" type="submit"><span>Enviar mensaje</span><i>→</i></button>
+          </form>
         </div>
-        <!-- El formulario abre el cliente de correo. Para recibirlo directamente, conectar Formspree/Netlify Forms (ver README). -->
-        <form class="form" id="contact-form" action="mailto:hola@blinkmediaai.com" method="post" enctype="text/plain">
-          <label>Nombre<input name="nombre" type="text" required autocomplete="name" /></label>
-          <label>Email<input name="email" type="email" required autocomplete="email" /></label>
-          <label>¿Qué necesitas?
-            <select name="servicio">
-              <option>Branding e identidad</option>
-              <option>Contenido para redes</option>
-              <option>Vídeo y animación IA</option>
-              <option>Fotografía de producto</option>
-              <option>Campaña publicitaria</option>
-              <option>Diseño web</option>
-              <option>Otro</option>
-            </select>
-          </label>
-          <label>Mensaje<textarea name="mensaje" rows="4" required></textarea></label>
-          <button class="btn" type="submit">Enviar mensaje</button>
-        </form>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="container footer__inner">
-      <a href="#top" class="logo"><span class="logo__mark" aria-hidden="true"></span><span>Blink<span class="logo__accent">Media</span>Ai</span></a>
-      <p class="muted">© <span id="year">2026</span> BlinkMediaAi. Todos los derechos reservados.</p>
-      <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener">Instagram ↗</a>
+    <div class="wrap">
+      <div class="footer__top">
+        <p>Estudio creativo de diseño con inteligencia artificial.</p>
+        <nav>
+          <a href="https://www.instagram.com/blinkmediaai/" target="_blank" rel="noopener">Instagram ↗</a>
+          <a href="mailto:hola@blinkmediaai.com">Email ↗</a>
+          <a href="#top">Volver arriba ↑</a>
+        </nav>
+      </div>
+      <p class="footer__word" aria-hidden="true">BlinkMedia<em>Ai</em></p>
+      <p class="footer__legal">© <span id="year">2026</span> BlinkMediaAi. Todos los derechos reservados.</p>
     </div>
   </footer>
 
+  <script src="assets/js/flow.js"></script>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>
